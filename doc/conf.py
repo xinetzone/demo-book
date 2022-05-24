@@ -83,20 +83,12 @@ comments_config = {
 }
 
 # MyST NB 设置
-nb_mime_priority_overrides = {
-    "html": (
-        "application/vnd.jupyter.widget-view+json",
-        "application/javascript",
-        "text/html",
-        "image/svg+xml",
-        "image/png",
-        "image/jpeg",
-        "text/markdown",
-        "text/latex",
-        "text/plain",
-    ),
-    'gettext': ()
-}
+nb_mime_priority_overrides = [
+  ('html', 'text/html', 0),
+  ('latex', 'image/jpeg', None),
+  ('*', 'customtype', 20),
+  ("gettext", 'customtype', None)
+]
 
 extlinks = {
     # 'duref': ('https://docutils.sourceforge.io/docs/ref/rst/'
