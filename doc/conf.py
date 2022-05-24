@@ -44,7 +44,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_comments",
     "sphinxcontrib.mermaid",
-    "sphinx_panels",
+    "sphinx_design",
     "sphinx_inline_tabs",
     # "sphinx.ext.autodoc",
     # "sphinx.ext.autosummary",
@@ -83,7 +83,7 @@ comments_config = {
 }
 
 # MyST NB 设置
-nb_render_priority = {
+nb_mime_priority_overrides = {
     "html": (
         "application/vnd.jupyter.widget-view+json",
         "application/javascript",
@@ -272,5 +272,5 @@ post_date_format_short = '%b %d, %Y'
 # 如果你希望stderr和stdout中的每个输出都被合并成一个流，请使用以下配置。
 # 避免将 jupter 执行报错的信息输出到 cmd
 nb_merge_streams = True
-execution_allow_errors = True
-jupyter_execute_notebooks = "off"
+nb_execution_allow_errors = True
+nb_execution_mode = "off"
