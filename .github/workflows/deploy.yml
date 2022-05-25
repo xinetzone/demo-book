@@ -34,9 +34,11 @@ jobs:
       #     sudo apt update
       #     sudo apt install -y graphviz
 
+      # outline for a myst_nb project with sphinx
+      # build with: sphinx-build -nW --keep-going -b html . ./_build/html
       - name: 🔧 Build HTML
         run: |
-          invoke doc
+          invoke doc --opts "-j 4"
 
       - name: 🚀 Deploy to GitHub pages
         uses: peaceiris/actions-gh-pages@v3.6.1
