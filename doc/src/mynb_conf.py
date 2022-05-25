@@ -1,17 +1,10 @@
-# load extensions
-extensions = ["myst_nb"]
 
-# specify project details
-project = "MyST-NB Quickstart"
+# myst_nb settings
+# 显示代码行数
+nb_number_source_lines = True
 
-# basic build settings
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints"]
-nitpicky = True
-
-# myst_nb default settings
-
-# Custom formats for reading notebook; suffix -> reader
-nb_custom_formats = {}
+# # Custom formats for reading notebook; suffix -> reader
+# nb_custom_formats = {}
 
 # Notebook level metadata key for config overrides
 # nb_metadata_key = 'mystnb'
@@ -23,7 +16,7 @@ nb_custom_formats = {}
 # nb_kernel_rgx_aliases = {}
 
 # Execution mode for notebooks
-# nb_execution_mode = 'auto'
+nb_execution_mode = 'off'
 
 # Path to folder for caching notebooks (default: <outdir>)
 # nb_execution_cache_path = ''
@@ -38,7 +31,7 @@ nb_custom_formats = {}
 # nb_execution_in_temp = False
 
 # Allow errors during execution
-# nb_execution_allow_errors = False
+nb_execution_allow_errors = True
 
 # Raise an exception on failed execution, rather than emitting a warning
 # nb_execution_raise_on_error = False
@@ -46,8 +39,8 @@ nb_custom_formats = {}
 # Print traceback to stderr on execution error
 # nb_execution_show_tb = False
 
-# Merge stdout/stderr execution output streams
-# nb_merge_streams = False
+# 合并 stderr 和 stdout 中的输出成单个流
+nb_merge_streams = True
 
 # The entry point for the execution output render class (in group `myst_nb.output_renderer`)
 # nb_render_plugin = 'default'
@@ -62,7 +55,12 @@ nb_custom_formats = {}
 # nb_number_source_lines = False
 
 # Overrides for the base render priority of mime types: list of (builder name, mime type, priority)
-# nb_mime_priority_overrides = ()
+nb_mime_priority_overrides = [
+    ('html', 'text/plain', 0), # 最高级别
+    ('latex', 'image/jpeg', None), # 禁用
+    # ("gettext", 'customtype', None),
+    # ('*', 'customtype', 20)
+]
 
 # Behaviour for stderr output
 # nb_output_stderr = 'show'
