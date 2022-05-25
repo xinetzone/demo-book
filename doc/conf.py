@@ -34,14 +34,10 @@ extensions = [
     # "sphinxext.opengraph",
 ]
 
-# 项目信息
-project = 'demo-book'
-copyright = '2021, xinetzone'
-author = 'xinetzone'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1'
-html_baseurl = 'https://xinetzone.github.io/demo-book'
+
 
 # basic build settings
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints"]

@@ -1,3 +1,9 @@
+# 项目信息
+project = 'demo-book'
+copyright = '2021, xinetzone'
+author = 'xinetzone'
+html_baseurl = 'https://xinetzone.github.io/demo-book'
+
 comments_config = {
     "hypothesis": True,
     "dokieli": False,
